@@ -1,10 +1,13 @@
 extends Node2D
 
+
+
 var summSCN = preload("res://scenes/summoner.tscn")
 var alertSCN = preload("res://scenes/alert.tscn")
 @onready var gui = $CanvasLayer/GUI
 @onready var summoners = $Summoners
 @onready var remote_tr = $RemoteTr
+@onready var camera_2d = $Camera2D
 
 var current_summoner : Summoner = null
 var summoner_list : Array[Summoner] = []
@@ -14,7 +17,16 @@ var can_reload : bool = false
 var curr_combo : int = 0
 var max_combo : int = 0
 var points : int = 0
+
+var min_zoom : float = 0.4
+var max_zoom : float = 1.0
+var zoom = 1.0
+
 func _input(_event):
+	if Input.is_action_just_pressed('ui_accept'):
+		if is_game_over:
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
 	if Input.is_action_just_pressed('ui_select'):
 		assert(current_summoner, ' no has current summoner')
 		if not is_game_over:
@@ -54,8 +66,10 @@ func add_new_summoner(pos : Vector2, qual : int):
 			add_alert(pos, Color.PALE_TURQUOISE, 'Excellent!', 1.5)
 			curr_combo += 3
 
+	set_zoom(qual)
 	if curr_combo >= max_combo:
 		max_combo = curr_combo
+
 
 
 	if current_summoner:
@@ -82,10 +96,27 @@ func add_new_summoner(pos : Vector2, qual : int):
 		points += curr_combo*qual +1
 	gui.update_labels(points, summon_score, curr_combo)
 
+
+func set_zoom(q):
+	var zoom_factor : float = 0.05
+
+	match q:
+		1 : zoom = 0.8
+		2 : zoom -= zoom_factor
+		3 : zoom -= zoom_factor
+
+	if zoom <= min_zoom:
+		zoom = min_zoom
+	elif zoom >= max_zoom:
+		zoom = max_zoom
+	var tween : Tween = get_tree().create_tween()
+	tween.tween_property(camera_2d, 'zoom', Vector2(zoom, zoom), 0.3)
+
+
 func failed():
 	is_game_over = true
 	add_alert(current_summoner.global_position, Color.PALE_VIOLET_RED, 'Noooo!', 2.0)
 	gui.game_over(points, summon_score, max_combo)
 
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	can_reload = true

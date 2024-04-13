@@ -7,7 +7,7 @@ class_name Summoner
 @onready var portal : Portal = $Portal
 
 func _ready():
-	pivot.rotation_degrees = randi_range(0, 180)
+	pivot.rotation_degrees = randi_range(15, 165)
 	portal.global_position = portal_position.global_position
 
 func destroy():

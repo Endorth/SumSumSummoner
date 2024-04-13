@@ -34,6 +34,7 @@ func stop_portal():
 
 func fail():
 	if can_fail:
+		anim.play("explosion")
 		failed.emit()
 
 func _on_timer_timeout():

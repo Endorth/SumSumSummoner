@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://30ktsb8up4ug"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_vd2ns"]
+[ext_resource type="FontFile" uid="uid://6gvg5ooct832" path="res://font/ArefRuqaaInk-Bold.ttf" id="2_5w3v2"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vd2ns")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 96.0
+offset_right = 1128.0
+offset_bottom = 624.0
+
+[node name="LeaderboardCont" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 576.0
+offset_right = 621.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+text = "press space to start summoning"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 464.0
+offset_right = 672.0
+offset_bottom = 488.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+text = "choose the name of the sect of summoners"
+
+[node name="NameCheckLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 408.0
+offset_right = 832.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+theme_override_font_sizes/font_size = 24
+text = "Welcome, summoner's clan"
+horizontal_alignment = 1
+
+[node name="TextEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 512.0
+offset_right = 608.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+placeholder_text = "summoner's sect"
+alignment = 1
+max_length = 20
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 48.0
+offset_right = 1106.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+text = "reload leaderboards"
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 520.0
+offset_right = 658.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+text = "save"
+
+[connection signal="focus_entered" from="TextEdit" to="." method="_on_text_edit_focus_entered"]
+[connection signal="focus_exited" from="TextEdit" to="." method="_on_text_edit_focus_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

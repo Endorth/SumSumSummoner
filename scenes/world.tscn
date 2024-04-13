@@ -8,6 +8,7 @@ script = ExtResource("1_knjhn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -100)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="RemoteTr" type="RemoteTransform2D" parent="."]
