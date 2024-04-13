@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cejpl1xxw61co"]
+
+[ext_resource type="Script" path="res://scenes/alert.gd" id="1_kgsw4"]
+[ext_resource type="FontFile" uid="uid://6gvg5ooct832" path="res://font/ArefRuqaaInk-Bold.ttf" id="1_sgfaq"]
+
+[node name="Alert" type="Node2D"]
+script = ExtResource("1_kgsw4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -264.0
+offset_top = -112.0
+offset_right = 800.0
+offset_bottom = -17.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.85098, 0.917647, 0.898039, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = ExtResource("1_sgfaq")
+theme_override_font_sizes/font_size = 64
+text = "Sum Sum Summoner!"
+horizontal_alignment = 1

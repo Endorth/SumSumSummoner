@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb6ffka0fsh77"]
+
+[ext_resource type="Script" path="res://scenes/world.gd" id="1_knjhn"]
+[ext_resource type="PackedScene" uid="uid://cdlq4hpe1kc4i" path="res://scenes/gui.tscn" id="2_sqv5t"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_knjhn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -100)
+position_smoothing_enabled = true
+
+[node name="RemoteTr" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Camera2D")
+
+[node name="Summoners" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("2_sqv5t")]

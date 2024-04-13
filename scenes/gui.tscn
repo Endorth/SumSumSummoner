@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdlq4hpe1kc4i"]
+
+[ext_resource type="Script" path="res://scenes/gui.gd" id="1_m4x4y"]
+[ext_resource type="FontFile" uid="uid://6gvg5ooct832" path="res://font/ArefRuqaaInk-Bold.ttf" id="2_0phkp"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m4x4y")
+
+[node name="SummonsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 239.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("2_0phkp")
+text = "sum sum summons -> 0"
+
+[node name="ComboLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 104.0
+offset_right = 247.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("2_0phkp")
+text = "combo -> 0"
+
+[node name="PointsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 24.0
+offset_right = 239.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_0phkp")
+text = "points -> 0"
+
+[node name="GameOverPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 208.0
+offset_right = 704.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("2_0phkp")
+theme_override_font_sizes/font_size = 64
+text = "Game over"
+horizontal_alignment = 1
+
+[node name="MaxComboLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 303.0
+offset_right = 704.0
+offset_bottom = 351.0
+theme_override_fonts/font = ExtResource("2_0phkp")
+theme_override_font_sizes/font_size = 32
+text = "max combo -> 99999"
+horizontal_alignment = 1
+
+[node name="GOSummonsLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 336.0
+offset_right = 704.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("2_0phkp")
+theme_override_font_sizes/font_size = 32
+text = "sum sum summons 9999999"
+horizontal_alignment = 1
+
+[node name="GOPointsLabel" type="Label" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 384.0
+offset_right = 715.0
+offset_bottom = 455.0
+theme_override_fonts/font = ExtResource("2_0phkp")
+theme_override_font_sizes/font_size = 48
+text = "points -> 9999999"
+horizontal_alignment = 1
+
+[node name="pressspaceLab" type="Label" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 472.0
+offset_right = 599.0
+offset_bottom = 496.0
+theme_override_fonts/font = ExtResource("2_0phkp")
+text = "press space to restart"
+horizontal_alignment = 1

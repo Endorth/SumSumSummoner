@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkral1f8vi8rd"]
+
+[ext_resource type="Texture2D" uid="uid://duhgqgp3l1fxt" path="res://assets/summmonersheet.png" id="1_4t1cd"]
+[ext_resource type="Script" path="res://scenes/summoner.gd" id="1_xoiwl"]
+[ext_resource type="PackedScene" uid="uid://buj31yos2m4h0" path="res://scenes/portal.tscn" id="3_g6d12"]
+
+[node name="Summoner" type="Node2D"]
+script = ExtResource("1_xoiwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4t1cd")
+offset = Vector2(0, -64)
+
+[node name="Portal" parent="." instance=ExtResource("3_g6d12")]
+position = Vector2(152, 0)
+
+[node name="Pivot" type="Marker2D" parent="."]
+
+[node name="PortalPosition" type="Marker2D" parent="Pivot"]
+position = Vector2(152, 0)

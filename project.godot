@@ -11,5 +11,15 @@ config_version=5
 [application]
 
 config/name="Sum Sum Summoner"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+secrets="*res://secrets.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
