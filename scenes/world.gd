@@ -11,6 +11,9 @@ var alertSCN = preload("res://scenes/alert.tscn")
 
 var current_summoner : Summoner = null
 var summoner_list : Array[Summoner] = []
+
+var max_summoners : int = 100
+
 var summon_score : int = 0
 var is_game_over : bool = false
 var can_reload : bool = false
@@ -38,6 +41,7 @@ func _input(_event):
 				else:
 					add_new_summoner(current_summoner.portal.global_position, 1)
 			else:
+				current_summoner.portal.anim.play("explosion")
 				current_summoner.portal.stop_portal()
 				failed()
 		else:
@@ -47,6 +51,12 @@ func _input(_event):
 func _ready():
 	add_new_summoner(Vector2.ZERO, 0)
 
+
+func _process(delta):
+	if not is_game_over and current_summoner:
+		current_summoner.pivot.look_at(get_global_mouse_position())
+		current_summoner.portal.global_position = current_summoner.portal_position.global_position
+
 func add_alert(pos, col : Color, txt : String, size : float):
 	var a = alertSCN.instantiate()
 	add_child(a)
@@ -55,22 +65,25 @@ func add_alert(pos, col : Color, txt : String, size : float):
 
 func add_new_summoner(pos : Vector2, qual : int):
 	match qual:
-		0 : add_alert(pos, Color.WHITE_SMOKE, 'Sum Sum Summoner!', 1.0)
+		0 :
+			add_alert(pos, Color.WHITE_SMOKE, 'Sum Sum Summoner!', 1.0)
+			AudioManager.play(1)
 		1 :
 			add_alert(pos, Color.PALE_GOLDENROD, 'Nice!', 1.0)
 			curr_combo = 0
+			AudioManager.play(1)
 		2 :
 			add_alert(pos, Color.PALE_GREEN, 'Great!', 1.0)
 			curr_combo += 1
+			AudioManager.play(0)
 		3 :
 			add_alert(pos, Color.PALE_TURQUOISE, 'Excellent!', 1.5)
 			curr_combo += 3
+			AudioManager.play(0)
 
 	set_zoom(qual)
 	if curr_combo >= max_combo:
 		max_combo = curr_combo
-
-
 
 	if current_summoner:
 		current_summoner.portal.stop_portal()
@@ -85,9 +98,7 @@ func add_new_summoner(pos : Vector2, qual : int):
 	remote_tr.global_position = current_summoner.portal_position.global_position
 	summoner_list.append(current_summoner)
 
-
-
-	if summoner_list.size() > 10:
+	if summoner_list.size() > max_summoners:
 		var s_to_delete : Summoner = summoner_list.pop_front()
 		s_to_delete.destroy()
 
@@ -95,7 +106,6 @@ func add_new_summoner(pos : Vector2, qual : int):
 		summon_score += 1
 		points += curr_combo*qual +1
 	gui.update_labels(points, summon_score, curr_combo)
-
 
 func set_zoom(q):
 	var zoom_factor : float = 0.05
@@ -114,9 +124,14 @@ func set_zoom(q):
 
 
 func failed():
+	AudioManager.play(2)
+	AudioManager.explosion()
 	is_game_over = true
 	add_alert(current_summoner.global_position, Color.PALE_VIOLET_RED, 'Noooo!', 2.0)
 	gui.game_over(points, summon_score, max_combo)
+
+	var tween : Tween = get_tree().create_tween()
+	tween.tween_property(camera_2d, 'zoom', Vector2(0.3, 0.3), 1.0)
 
 	await get_tree().create_timer(1.0).timeout
 	can_reload = true

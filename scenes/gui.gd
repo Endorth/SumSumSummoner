@@ -33,8 +33,8 @@ func check_score(points):
 		var top_score = sw_result['top_score']['score']
 		if points > top_score:
 			save_score(points)
-		else:
-			print('has not been achieved')
+		#else:
+			#print('has not been achieved')
 	#print("Does player have a top score? " + str(!sw_result['top_score'].empty()))
 
 func save_score(points):

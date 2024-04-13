@@ -38,5 +38,6 @@ func fail():
 		failed.emit()
 
 func _on_timer_timeout():
-	can_press = true
-	anim.play("FX")
+	if can_fail:
+		can_press = true
+		anim.play("FX")

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 secrets="*res://secrets.gd"
 Init="*res://scenes/init.gd"
+AudioManager="*res://scenes/audio_manager.tscn"
 
 [editor_plugins]
 

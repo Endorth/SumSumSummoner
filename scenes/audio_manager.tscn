@@ -1,0 +1,43 @@
+[gd_scene load_steps=24 format=3 uid="uid://c4hc17newjf4f"]
+
+[ext_resource type="AudioStream" uid="uid://dptwnbd5yd348" path="res://sounds/sumsumsummoner_theme.mp3" id="1_4qcky"]
+[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="1_fbkyr"]
+[ext_resource type="AudioStream" uid="uid://dxp72gxftmg3r" path="res://sounds/sum1.mp3" id="2_ct2nv"]
+[ext_resource type="AudioStream" uid="uid://dimrspf6fpmuj" path="res://sounds/sum2.mp3" id="3_5geoa"]
+[ext_resource type="AudioStream" uid="uid://cdybikigykent" path="res://sounds/sum3.mp3" id="4_rs8wp"]
+[ext_resource type="AudioStream" uid="uid://dvwq3tl6wgik6" path="res://sounds/sum4.mp3" id="5_t7f4m"]
+[ext_resource type="AudioStream" uid="uid://br08udvtplb4g" path="res://sounds/sum5.mp3" id="6_4xq47"]
+[ext_resource type="AudioStream" uid="uid://jgqqpao0bw3l" path="res://sounds/sum6.mp3" id="7_sy413"]
+[ext_resource type="AudioStream" uid="uid://c6d1exam6tnmn" path="res://sounds/sum7.mp3" id="8_xg2xk"]
+[ext_resource type="AudioStream" uid="uid://bmg64hdvndcw5" path="res://sounds/sum8.mp3" id="9_h521i"]
+[ext_resource type="AudioStream" uid="uid://pwda8ecob2d1" path="res://sounds/summoner1.mp3" id="10_5qlpr"]
+[ext_resource type="AudioStream" uid="uid://ggpj3i1yx228" path="res://sounds/summoner2.mp3" id="11_uqfcx"]
+[ext_resource type="AudioStream" uid="uid://bsec1jt8sskyg" path="res://sounds/summoner3.mp3" id="12_tcemj"]
+[ext_resource type="AudioStream" uid="uid://o4tx4cjxcvmw" path="res://sounds/summoner4.mp3" id="13_8emos"]
+[ext_resource type="AudioStream" uid="uid://dkltujjrjhgvv" path="res://sounds/summoner5.mp3" id="14_ln4xq"]
+[ext_resource type="AudioStream" uid="uid://b4ruhkwhl6jl7" path="res://sounds/noo1.mp3" id="15_4xqpa"]
+[ext_resource type="AudioStream" uid="uid://dbc0dbrbnocua" path="res://sounds/noo2.mp3" id="16_ciaag"]
+[ext_resource type="AudioStream" uid="uid://3mxenc7qf50u" path="res://sounds/noo3.mp3" id="17_ts5no"]
+[ext_resource type="AudioStream" uid="uid://bw3r55mhaos0r" path="res://sounds/noo4.mp3" id="18_xnbdp"]
+[ext_resource type="AudioStream" uid="uid://b3m8bh56wbagn" path="res://sounds/noo5.mp3" id="19_0jncl"]
+[ext_resource type="AudioStream" uid="uid://dy5u3lo846ulj" path="res://sounds/noo6.mp3" id="20_n7k78"]
+[ext_resource type="AudioStream" uid="uid://i20486yljtps" path="res://sounds/noo7.mp3" id="21_puuyn"]
+[ext_resource type="AudioStream" uid="uid://lsanaiqbaky4" path="res://sounds/expl.mp3" id="23_ngsom"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_fbkyr")
+sum_sounds_array = Array[AudioStreamMP3]([ExtResource("2_ct2nv"), ExtResource("3_5geoa"), ExtResource("4_rs8wp"), ExtResource("5_t7f4m"), ExtResource("6_4xq47"), ExtResource("7_sy413"), ExtResource("8_xg2xk"), ExtResource("9_h521i")])
+summoner_sounds_array = Array[AudioStreamMP3]([ExtResource("10_5qlpr"), ExtResource("11_uqfcx"), ExtResource("12_tcemj"), ExtResource("13_8emos"), ExtResource("14_ln4xq")])
+no_sounds_array = Array[AudioStreamMP3]([ExtResource("15_4xqpa"), ExtResource("16_ciaag"), ExtResource("17_ts5no"), ExtResource("18_xnbdp"), ExtResource("19_0jncl"), ExtResource("20_n7k78"), ExtResource("21_puuyn")])
+
+[node name="BSO" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_4qcky")
+autoplay = true
+bus = &"Music"
+
+[node name="SumSFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Expl" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_ngsom")
+bus = &"SFX"
