@@ -15,7 +15,7 @@ var poisonSCN = preload("res://scenes/poison.tscn")
 var current_summoner : Summoner = null
 var summoner_list : Array[Summoner] = []
 
-var max_summoners : int = 100
+var max_summoners : int = 250
 var populator_list : Array = []
 var summon_score : int = 0
 var is_game_over : bool = false
@@ -46,11 +46,11 @@ func play():
 		if not is_game_over:
 			if current_summoner.portal.can_press:
 				if current_summoner.portal.is_perfect_summon:
-					add_new_summoner(current_summoner.portal.global_position, 3)
+					add_new_summoner(current_summoner.portal.global_position, 3, false)
 				elif current_summoner.portal.is_great_summon:
-					add_new_summoner(current_summoner.portal.global_position, 2)
+					add_new_summoner(current_summoner.portal.global_position, 2, false)
 				else:
-					add_new_summoner(current_summoner.portal.global_position, 1)
+					add_new_summoner(current_summoner.portal.global_position, 1, false)
 			else:
 
 				current_summoner.portal.anim.play("explosion")
@@ -63,7 +63,7 @@ func play():
 func _ready():
 	for pop in poison_populator.get_children():
 		populator_list.append(pop)
-	add_new_summoner(Vector2.ZERO, 0)
+	add_new_summoner(Vector2.ZERO, 0,true)
 
 
 func _process(delta):
@@ -78,7 +78,7 @@ func add_alert(pos, col : Color, txt : String, size : float):
 	a.global_position = pos
 	a.set_alert(col, txt, size)
 
-func add_new_summoner(pos : Vector2, qual : int):
+func add_new_summoner(pos : Vector2, qual : int, is_first_summoner : bool):
 	match qual:
 		0 :
 			add_alert(pos, Color.WHITE_SMOKE, 'Sum Sum Summoner!', 1.0)
@@ -118,6 +118,11 @@ func add_new_summoner(pos : Vector2, qual : int):
 	current_summoner.portal.set_anim_speed(get_speed_by_combo())
 
 	summoner_list.append(current_summoner)
+
+	if is_first_summoner:
+		current_summoner.portal.init(5.0)
+	else:
+		current_summoner.portal.init(randf_range(0.5, 1.0))
 
 	if summoner_list.size() > max_summoners:
 		var s_to_delete : Summoner = summoner_list.pop_front()
@@ -208,3 +213,13 @@ func _on_timer_timeout():
 
 func _on_can_press_timer_timeout():
 	can_press = true
+
+
+func _on_start_timer_timeout():
+	add_alert(current_summoner.global_position, Color.WHITE_SMOKE, 'Summon!', 1.0)
+
+
+
+func _on_ready_timer_timeout():
+	add_alert(current_summoner.global_position, Color.WHITE_SMOKE, 'Ready?', 1.0)
+	$StartTimer.start()

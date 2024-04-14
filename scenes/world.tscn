@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb6ffka0fsh77"]
+[gd_scene load_steps=12 format=3 uid="uid://bb6ffka0fsh77"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_knjhn"]
 [ext_resource type="PackedScene" uid="uid://cdlq4hpe1kc4i" path="res://scenes/gui.tscn" id="2_sqv5t"]
 [ext_resource type="Texture2D" uid="uid://b0jer4yc6alw7" path="res://assets/roads.png" id="3_bnisi"]
 [ext_resource type="Texture2D" uid="uid://b0b3nq6fwnpbl" path="res://assets/bg1.png" id="3_uyk1d"]
 [ext_resource type="PackedScene" uid="uid://b7by4g6lk0y4t" path="res://scenes/light.tscn" id="4_4lhfs"]
+[ext_resource type="PackedScene" uid="uid://qyevq6aik11j" path="res://scenes/lapide.tscn" id="5_okc4o"]
 [ext_resource type="PackedScene" uid="uid://lyrsbnwfs7xk" path="res://scenes/poison.tscn" id="5_xkdxl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idin8"]
@@ -125,6 +126,69 @@ position = Vector2(440, -3088)
 [node name="Light39" parent="Summoners" instance=ExtResource("4_4lhfs")]
 position = Vector2(1048, -4168)
 
+[node name="Light52" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(1768, -3576)
+
+[node name="Light54" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4104, -4048)
+
+[node name="Light55" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4096, -3208)
+
+[node name="Light56" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4128, -2464)
+
+[node name="Light57" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4136, -1820)
+
+[node name="Light58" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4144, -1336)
+
+[node name="Light59" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4168, -875)
+
+[node name="Light60" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4752, -488)
+
+[node name="Light61" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(5447, -488)
+
+[node name="Light62" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(2552, -413)
+
+[node name="Light63" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(2552, 184)
+
+[node name="Light64" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(2584, 792)
+
+[node name="Light66" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(3592, 2624)
+
+[node name="Light67" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4328, 2976)
+
+[node name="Light68" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(5024, 2656)
+
+[node name="Light69" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(5616, 936)
+
+[node name="Light70" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(5640, 1808)
+
+[node name="Light71" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(5152, 16)
+
+[node name="Light72" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(4072, -60)
+
+[node name="Light65" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(2576, 1440)
+
+[node name="Light53" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(3104, -3608)
+
 [node name="Light40" parent="Summoners" instance=ExtResource("4_4lhfs")]
 position = Vector2(1024, -4872)
 
@@ -230,6 +294,18 @@ position = Vector2(-544, 5648)
 [node name="Light28" parent="Summoners" instance=ExtResource("4_4lhfs")]
 position = Vector2(512, 4880)
 
+[node name="Light73" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(1440, 5112)
+
+[node name="Light74" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(2448, 5160)
+
+[node name="Light75" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(1856, 5512)
+
+[node name="Light76" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(744, 5512)
+
 [node name="Light29" parent="Summoners" instance=ExtResource("4_4lhfs")]
 position = Vector2(520, 4196)
 
@@ -237,7 +313,10 @@ position = Vector2(520, 4196)
 position = Vector2(511, 3416)
 
 [node name="Light31" parent="Summoners" instance=ExtResource("4_4lhfs")]
-position = Vector2(1000, 3064)
+position = Vector2(987, 2992)
+
+[node name="Light77" parent="Summoners" instance=ExtResource("4_4lhfs")]
+position = Vector2(1616, 2648)
 
 [node name="Light32" parent="Summoners" instance=ExtResource("4_4lhfs")]
 position = Vector2(2288, 3016)
@@ -253,6 +332,105 @@ position = Vector2(-16, 936)
 
 [node name="Light37" parent="Summoners" instance=ExtResource("4_4lhfs")]
 position = Vector2(-8, 1592)
+
+[node name="Lapide" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(728, 408)
+
+[node name="Lapide2" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(1088, 1080)
+
+[node name="Lapide3" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(1808, 296)
+
+[node name="Lapide4" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(1963, -968)
+
+[node name="Lapide5" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(848, -1590)
+
+[node name="Lapide6" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(2000, -2696)
+
+[node name="Lapide7" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(2701, -1834)
+
+[node name="Lapide8" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-352, -3584)
+
+[node name="Lapide9" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-672, -4656)
+
+[node name="Lapide10" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-1848, -4392)
+
+[node name="Lapide11" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-2728, -3688)
+
+[node name="Lapide12" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-3840, -4024)
+
+[node name="Lapide13" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-3912, -2008)
+
+[node name="Lapide14" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-5408, -1600)
+
+[node name="Lapide15" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-5048, -720)
+
+[node name="Lapide16" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-5544, 174)
+
+[node name="Lapide17" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-2640, -312)
+
+[node name="Lapide18" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-3288, 1848)
+
+[node name="Lapide19" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-5088, 1272)
+
+[node name="Lapide20" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-5248, 2303)
+
+[node name="Lapide21" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-3448, 2800)
+
+[node name="Lapide22" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-2976, 3752)
+
+[node name="Lapide23" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-2728, 4804)
+
+[node name="Lapide24" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-723, 4984)
+
+[node name="Lapide25" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(-397, 4070)
+
+[node name="Lapide26" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(1592, 3944)
+
+[node name="Lapide27" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(3032, 4400)
+
+[node name="Lapide28" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(3504, 3608)
+
+[node name="Lapide29" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(4504, 2096)
+
+[node name="Lapide30" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(3968, 1232)
+
+[node name="Lapide31" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(4896, 784)
+
+[node name="Lapide32" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(5080, -1344)
+
+[node name="Lapide33" parent="Summoners" instance=ExtResource("5_okc4o")]
+position = Vector2(4856, -2704)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -422,5 +600,16 @@ one_shot = true
 
 [node name="Props" type="Node2D" parent="."]
 
+[node name="ReadyTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="CanPressTimer" to="." method="_on_can_press_timer_timeout"]
+[connection signal="timeout" from="ReadyTimer" to="." method="_on_ready_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

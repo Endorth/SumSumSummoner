@@ -13,7 +13,9 @@ signal failed
 
 func _ready():
 	set_color()
-	prepare_time = randf_range(0.5, 1.0)
+
+func init(f):
+	prepare_time = f
 	$Timer.start(prepare_time)
 	anim.play("prepare")
 

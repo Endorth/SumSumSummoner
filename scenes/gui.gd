@@ -8,9 +8,9 @@ func _ready():
 	$GameOverPanel.visible = false
 
 func update_labels(p, s, cc):
-	points_label.text = 'points -> ' + str(p)
+	points_label.text = str(p)
 	summons_label.text = 'sum sum summons -> ' + str(s)
-	combo_label.text = 'combo -> ' + str(cc)
+	combo_label.text = 'x ' + str(cc)
 
 func game_over(p, s, mc):
 
