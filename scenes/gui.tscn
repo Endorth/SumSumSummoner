@@ -26,16 +26,17 @@ text = "sum sum summons -> 0"
 
 [node name="ComboLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 72.0
-offset_right = 215.0
-offset_bottom = 143.0
+offset_left = 944.0
+offset_top = 16.0
+offset_right = 1127.0
+offset_bottom = 87.0
 theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
 theme_override_colors/font_outline_color = Color(0.027451, 0.0588235, 0.105882, 1)
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("2_0phkp")
 theme_override_font_sizes/font_size = 48
 text = "x 0"
+horizontal_alignment = 2
 
 [node name="PointsLabel" type="Label" parent="."]
 layout_mode = 0

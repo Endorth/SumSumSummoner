@@ -29,9 +29,12 @@ func _ready():
 	$AnimatedSprite2D4.visible = false
 	$NameCheckLabel.text = 'Welcome, ' + Init.player_name
 	Init.lead_score_ready.connect(update_leaderboard)
-	Init.read_score()
+	#Init.read_score()
 
 func _input(_event):
+
+	if Input.is_action_just_pressed('ui_cancel'):
+		get_tree().quit()
 	if Input.is_action_just_pressed('ui_accept'):
 		_on_save_pressed()
 		_on_text_edit_focus_exited()
@@ -108,7 +111,8 @@ func _on_animated_sprite_2d_4_animation_finished():
 
 func _on_timer_timeout():
 	is_ready = true
-	update_leaderboard()
+	Init.read_score()
+	#update_leaderboard()
 
 
 

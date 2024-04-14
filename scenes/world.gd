@@ -29,6 +29,8 @@ var max_zoom : float = 1.0
 var zoom = 1.0
 var can_press = true
 func _input(_event):
+	if Input.is_action_just_pressed('ui_cancel'):
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	if Input.is_action_just_pressed('ui_accept'):
 		if is_game_over:
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")

@@ -22,6 +22,10 @@ secrets="*res://secrets.gd"
 Init="*res://scenes/init.gd"
 AudioManager="*res://scenes/audio_manager.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
