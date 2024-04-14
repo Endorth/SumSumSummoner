@@ -598,7 +598,7 @@ position = Vector2(518, 250)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5xq44")
 autoplay = "default"
-frame_progress = 0.550707
+frame_progress = 0.617231
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.627451, 0.219608, 1, 1)
@@ -606,7 +606,7 @@ position = Vector2(502, 338)
 scale = Vector2(0.617647, 0.617647)
 sprite_frames = SubResource("SpriteFrames_cysui")
 autoplay = "default"
-frame_progress = 0.687519
+frame_progress = 0.787513
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -615,7 +615,7 @@ position = Vector2(468, 254)
 scale = Vector2(0.617647, 0.617647)
 sprite_frames = SubResource("SpriteFrames_kb04u")
 autoplay = "default"
-frame_progress = 0.285537
+frame_progress = 0.385531
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.721569, 1, 1, 1)

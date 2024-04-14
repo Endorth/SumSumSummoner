@@ -219,6 +219,8 @@ func _on_can_press_timer_timeout():
 
 func _on_start_timer_timeout():
 	add_alert(current_summoner.global_position, Color.WHITE_SMOKE, 'Summon!', 1.0)
+	$Arrows.visible = false
+
 
 
 

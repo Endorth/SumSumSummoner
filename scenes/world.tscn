@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bb6ffka0fsh77"]
+[gd_scene load_steps=13 format=3 uid="uid://bb6ffka0fsh77"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_knjhn"]
 [ext_resource type="PackedScene" uid="uid://cdlq4hpe1kc4i" path="res://scenes/gui.tscn" id="2_sqv5t"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7by4g6lk0y4t" path="res://scenes/light.tscn" id="4_4lhfs"]
 [ext_resource type="PackedScene" uid="uid://qyevq6aik11j" path="res://scenes/lapide.tscn" id="5_okc4o"]
 [ext_resource type="PackedScene" uid="uid://lyrsbnwfs7xk" path="res://scenes/poison.tscn" id="5_xkdxl"]
+[ext_resource type="Texture2D" uid="uid://dw7o82p0j1xvr" path="res://assets/arrow.png" id="8_u56ls"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idin8"]
 texture = ExtResource("3_uyk1d")
@@ -608,6 +609,19 @@ autostart = true
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Arrows" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrows"]
+modulate = Color(1, 1, 1, 0.584314)
+position = Vector2(-128, 104)
+texture = ExtResource("8_u56ls")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrows"]
+modulate = Color(1, 1, 1, 0.584314)
+position = Vector2(136, 104)
+texture = ExtResource("8_u56ls")
+flip_h = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="CanPressTimer" to="." method="_on_can_press_timer_timeout"]
