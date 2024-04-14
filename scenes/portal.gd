@@ -17,6 +17,9 @@ func _ready():
 	$Timer.start(prepare_time)
 	anim.play("prepare")
 
+func set_anim_speed(v : float):
+	anim.speed_scale = v
+
 func set_color():
 	var r = randf_range(0.5, 0.9)
 	var g = randf_range(0.5, 0.9)

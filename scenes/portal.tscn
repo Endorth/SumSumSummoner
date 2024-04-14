@@ -300,6 +300,7 @@ _data = {
 }
 
 [node name="Portal" type="Node2D"]
+z_index = -1
 script = ExtResource("1_lcprh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -316,6 +317,7 @@ hframes = 14
 libraries = {
 "": SubResource("AnimationLibrary_m8i3b")
 }
+speed_scale = 0.5
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

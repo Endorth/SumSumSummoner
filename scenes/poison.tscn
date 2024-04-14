@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://lyrsbnwfs7xk"]
+
+[ext_resource type="Texture2D" uid="uid://bb431bu068vdk" path="res://assets/poisonpart.png" id="1_ba8ng"]
+[ext_resource type="Texture2D" uid="uid://dxbdxram8mbk8" path="res://assets/poisonarea.png" id="1_rlcrj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_defws"]
+particles_animation = true
+particles_anim_h_frames = 11
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_2q8cu"]
+offsets = PackedFloat32Array(0, 0.166667, 0.784553, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6dfqj"]
+gradient = SubResource("Gradient_2q8cu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tfy2y"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(40, 40, 1)
+emission_shape = 2
+emission_sphere_radius = 11.17
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_6dfqj")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lb7hd"]
+radius = 288.0
+height = 816.0
+
+[node name="Poison" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.693924, 0.910855)
+texture = ExtResource("1_rlcrj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_defws")
+amount = 80
+process_material = SubResource("ParticleProcessMaterial_tfy2y")
+texture = ExtResource("1_ba8ng")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lb7hd")

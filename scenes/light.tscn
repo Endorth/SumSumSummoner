@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7by4g6lk0y4t"]
+
+[ext_resource type="Texture2D" uid="uid://bonlx2hwvoc2x" path="res://assets/light.png" id="1_tfvug"]
+[ext_resource type="Texture2D" uid="uid://dl2iuu3gsawwc" path="res://assets/alo.png" id="2_qu0ei"]
+
+[sub_resource type="Animation" id="Animation_7svbh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n6x1b"]
+resource_name = "fire"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.6, 3.6, 5.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.247059, 0.301961, 1), Color(1, 0.360784, 0.145098, 1), Color(1, 1, 1, 1), Color(1, 0.247059, 0.301961, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1mcg"]
+_data = {
+"RESET": SubResource("Animation_7svbh"),
+"fire": SubResource("Animation_n6x1b")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n12xm"]
+radius = 32.0
+height = 112.0
+
+[node name="Light" type="Node2D"]
+position = Vector2(-416, -76)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tfvug")
+offset = Vector2(64, -72)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -184)
+texture = ExtResource("2_qu0ei")
+offset = Vector2(0, -8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j1mcg")
+}
+autoplay = "fire"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(8, -80)
+scale = Vector2(2.01724, 2.01724)
+energy = 1.92
+texture = ExtResource("2_qu0ei")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_n12xm")

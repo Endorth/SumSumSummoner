@@ -49,10 +49,10 @@ grow_vertical = 2
 
 [node name="GameOverLabel" type="Label" parent="GameOverPanel"]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 208.0
-offset_right = 704.0
-offset_bottom = 303.0
+offset_left = 736.0
+offset_top = 440.0
+offset_right = 1120.0
+offset_bottom = 535.0
 theme_override_fonts/font = ExtResource("2_0phkp")
 theme_override_font_sizes/font_size = 64
 text = "Game over"
@@ -60,10 +60,10 @@ horizontal_alignment = 1
 
 [node name="MaxComboLabel" type="Label" parent="GameOverPanel"]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 303.0
-offset_right = 704.0
-offset_bottom = 351.0
+offset_left = 64.0
+offset_top = 544.0
+offset_right = 448.0
+offset_bottom = 592.0
 theme_override_fonts/font = ExtResource("2_0phkp")
 theme_override_font_sizes/font_size = 32
 text = "max combo -> 99999"
@@ -71,10 +71,10 @@ horizontal_alignment = 1
 
 [node name="GOSummonsLabel" type="Label" parent="GameOverPanel"]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 336.0
-offset_right = 704.0
-offset_bottom = 384.0
+offset_left = 32.0
+offset_top = 488.0
+offset_right = 480.0
+offset_bottom = 536.0
 theme_override_fonts/font = ExtResource("2_0phkp")
 theme_override_font_sizes/font_size = 32
 text = "sum sum summons 9999999"
@@ -82,10 +82,10 @@ horizontal_alignment = 1
 
 [node name="GOPointsLabel" type="Label" parent="GameOverPanel"]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 384.0
-offset_right = 715.0
-offset_bottom = 455.0
+offset_left = 56.0
+offset_top = 416.0
+offset_right = 451.0
+offset_bottom = 487.0
 theme_override_fonts/font = ExtResource("2_0phkp")
 theme_override_font_sizes/font_size = 48
 text = "points -> 9999999"
@@ -93,20 +93,20 @@ horizontal_alignment = 1
 
 [node name="pressspaceLab" type="Label" parent="GameOverPanel"]
 layout_mode = 0
-offset_left = 392.0
-offset_top = 496.0
-offset_right = 640.0
-offset_bottom = 520.0
+offset_left = 808.0
+offset_top = 544.0
+offset_right = 1056.0
+offset_bottom = 568.0
 theme_override_fonts/font = ExtResource("2_0phkp")
 text = "press space to restart"
 horizontal_alignment = 1
 
 [node name="pressspaceLab2" type="Label" parent="GameOverPanel"]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 536.0
-offset_right = 643.0
-offset_bottom = 560.0
+offset_left = 808.0
+offset_top = 584.0
+offset_right = 1067.0
+offset_bottom = 608.0
 theme_override_fonts/font = ExtResource("2_0phkp")
 text = "press enter to return to the menu"
 horizontal_alignment = 1
