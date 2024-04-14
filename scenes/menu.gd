@@ -17,6 +17,8 @@ func _input(_event):
 	if Input.is_action_just_pressed('ui_select'):
 		if not is_naming and is_ready:
 			_on_save_pressed()
+			AudioManager.play(0)
+			await get_tree().create_timer(0.5).timeout
 			get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func update_leaderboard():
@@ -51,3 +53,13 @@ func _on_text_edit_focus_entered():
 
 func _on_text_edit_focus_exited():
 	is_naming = false
+
+func _on_music_h_slider_value_changed(value):
+	var v = value/100
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index('Music'), linear_to_db(v))
+func _on_sfxh_slider_value_changed(value):
+	var v = value/100
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index('SFX'), linear_to_db(v))
+func _on_master_h_slider_value_changed(value):
+	var v = value/100
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index('Master'), linear_to_db(v))

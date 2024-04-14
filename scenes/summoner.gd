@@ -5,6 +5,7 @@ class_name Summoner
 @onready var portal_position = $Pivot/PortalPosition
 
 @onready var portal : Portal = $Portal
+@onready var anim = $AnimationPlayer
 
 
 func _ready():
@@ -12,6 +13,8 @@ func _ready():
 	pivot.rotation_degrees = randi_range(15, 165)
 	portal.global_position = portal_position.global_position
 
+func dead():
+	anim.play('dead')
 
 func set_color():
 	var r = randf_range(0.1, 0.5)

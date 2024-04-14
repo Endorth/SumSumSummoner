@@ -42,6 +42,36 @@ offset_bottom = 488.0
 theme_override_fonts/font = ExtResource("2_5w3v2")
 text = "choose the name of the sect of summoners"
 
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 472.0
+offset_right = 96.0
+offset_bottom = 496.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+text = "master"
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 512.0
+offset_right = 96.0
+offset_bottom = 536.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+text = "music"
+horizontal_alignment = 2
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 552.0
+offset_right = 96.0
+offset_bottom = 576.0
+theme_override_fonts/font = ExtResource("2_5w3v2")
+text = "sfx"
+horizontal_alignment = 2
+
 [node name="NameCheckLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 200.0
@@ -82,7 +112,34 @@ offset_bottom = 552.0
 theme_override_fonts/font = ExtResource("2_5w3v2")
 text = "save"
 
+[node name="MasterHSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 480.0
+offset_right = 256.0
+offset_bottom = 496.0
+value = 100.0
+
+[node name="MusicHSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 520.0
+offset_right = 256.0
+offset_bottom = 536.0
+value = 100.0
+
+[node name="SFXHSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 560.0
+offset_right = 256.0
+offset_bottom = 576.0
+value = 100.0
+
 [connection signal="focus_entered" from="TextEdit" to="." method="_on_text_edit_focus_entered"]
 [connection signal="focus_exited" from="TextEdit" to="." method="_on_text_edit_focus_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="value_changed" from="MasterHSlider" to="." method="_on_master_h_slider_value_changed"]
+[connection signal="value_changed" from="MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]

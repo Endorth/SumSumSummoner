@@ -56,6 +56,7 @@ func _process(delta):
 	if not is_game_over and current_summoner:
 		current_summoner.pivot.look_at(get_global_mouse_position())
 		current_summoner.portal.global_position = current_summoner.portal_position.global_position
+		clamp(current_summoner.pivot.rotation, 15, 165)
 
 func add_alert(pos, col : Color, txt : String, size : float):
 	var a = alertSCN.instantiate()
